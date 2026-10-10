@@ -15,5 +15,7 @@ Decisions (studs):
   length as the inset striking face. No corner-wedge part exists in the kit, so each of the
   8 corners is left as a small 1-stud pocket (tried full-width wedges instead: they overhang
   the side bevels and read as a lip, which looked worse).
+- Head's four long edges also bevelled 1 stud (wedges along X), so every head edge is
+  bevelled: the head body is a 5 x 6 octagon in cross-section.
 - Handle kept square (no taper, no rounding) — the sketch's slight taper is ignored.
 - Colours: Steel head, Wood handle.

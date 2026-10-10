@@ -48,13 +48,175 @@
       "size": [
         10,
         5,
-        6
+        4
+      ],
+      "studs": [
+        "Top",
+        "Bottom"
+      ]
+    },
+    {
+      "class": "Part",
+      "color": "#606c7c",
+      "material": "SmoothPlastic",
+      "name": "Head_SideLeft",
+      "pos": [
+        0,
+        16.5,
+        2.5
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        10,
+        3,
+        1
+      ],
+      "studs": [
+        "Back"
+      ]
+    },
+    {
+      "class": "Part",
+      "color": "#606c7c",
+      "material": "SmoothPlastic",
+      "name": "Head_SideRight",
+      "pos": [
+        0,
+        16.5,
+        -2.5
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        10,
+        3,
+        1
+      ],
+      "studs": [
+        "Front"
+      ]
+    },
+    {
+      "class": "WedgePart",
+      "color": "#606c7c",
+      "material": "SmoothPlastic",
+      "name": "Head_Bevel_TopLeft",
+      "pos": [
+        0,
+        18.5,
+        2.5
+      ],
+      "rot": [
+        0,
+        3.141592653589793,
+        0
+      ],
+      "size": [
+        10,
+        1,
+        1
       ],
       "studs": [
         "Top",
         "Bottom",
         "Front",
-        "Back"
+        "Back",
+        "Left",
+        "Right"
+      ]
+    },
+    {
+      "class": "WedgePart",
+      "color": "#606c7c",
+      "material": "SmoothPlastic",
+      "name": "Head_Bevel_BottomLeft",
+      "pos": [
+        0,
+        14.5,
+        2.5
+      ],
+      "rot": [
+        0,
+        3.141592653589793,
+        3.141592653589793
+      ],
+      "size": [
+        10,
+        1,
+        1
+      ],
+      "studs": [
+        "Top",
+        "Bottom",
+        "Front",
+        "Back",
+        "Left",
+        "Right"
+      ]
+    },
+    {
+      "class": "WedgePart",
+      "color": "#606c7c",
+      "material": "SmoothPlastic",
+      "name": "Head_Bevel_TopRight",
+      "pos": [
+        0,
+        18.5,
+        -2.5
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        10,
+        1,
+        1
+      ],
+      "studs": [
+        "Top",
+        "Bottom",
+        "Front",
+        "Back",
+        "Left",
+        "Right"
+      ]
+    },
+    {
+      "class": "WedgePart",
+      "color": "#606c7c",
+      "material": "SmoothPlastic",
+      "name": "Head_Bevel_BottomRight",
+      "pos": [
+        0,
+        14.5,
+        -2.5
+      ],
+      "rot": [
+        0,
+        0,
+        3.141592653589793
+      ],
+      "size": [
+        10,
+        1,
+        1
+      ],
+      "studs": [
+        "Top",
+        "Bottom",
+        "Front",
+        "Back",
+        "Left",
+        "Right"
       ]
     },
     {

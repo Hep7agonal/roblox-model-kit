@@ -6,9 +6,19 @@ return function(kit)
 	-- Handle runs through the head and pokes 1 stud out the top
 	kit:part{ name = "Handle", color = "Wood", size = { 2, 20, 2 }, pos = { 0, 10, 0 } }
 
-	-- Head body
-	kit:part{ name = "Head", color = "Steel", size = { 10, 5, 6 }, pos = { 0, HEAD_Y, 0 },
-		studs = { "Top", "Bottom", "Front", "Back" } }
+	-- Head body: 5 x 6 cross-section with all four long edges bevelled 1 stud
+	kit:part{ name = "Head", color = "Steel", size = { 10, 5, 4 }, pos = { 0, HEAD_Y, 0 },
+		studs = { "Top", "Bottom" } }
+	kit:part{ name = "Head_SideLeft", color = "Steel", size = { 10, 3, 1 }, pos = { 0, HEAD_Y, 2.5 },
+		studs = { "Back" } }
+	kit:part{ name = "Head_SideRight", color = "Steel", size = { 10, 3, 1 }, pos = { 0, HEAD_Y, -2.5 },
+		studs = { "Front" } }
+	for _, e in { { z = 2.5, tag = "Left", dir = "+Z" }, { z = -2.5, tag = "Right", dir = "-Z" } } do
+		kit:wedge{ name = "Head_Bevel_Top" .. e.tag, color = "Steel", size = { 10, 1, 1 },
+			pos = { 0, HEAD_Y + 2, e.z }, facing = e.dir }
+		kit:wedge{ name = "Head_Bevel_Bottom" .. e.tag, color = "Steel", size = { 10, 1, 1 },
+			pos = { 0, HEAD_Y - 2, e.z }, facing = e.dir, flip = true }
+	end
 
 	for _, side in { { s = 1, tag = "Front", face = "Right", dir = "+X" }, { s = -1, tag = "Back", face = "Left", dir = "-X" } } do
 		local x = 5.5 * side.s
