@@ -18,13 +18,25 @@
 </style>
 </head>
 <body>
-<div id="ui"><select id="pick"></select><span id="info"></span></div>
+<div id="ui"><select id="pick"></select><button id="reload" title="Reload from source">Reload</button><span id="info"></span></div>
 <div id="err"></div>
 <script type="module">
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-const BASE = new URL('../dist/preview/', location.href);
+// ?branch=<name> loads dist/preview from that branch on GitHub (cache-busted).
+// Repo comes from ?repo=owner/name, else from the Pages address <owner>.github.io/<repo>/.
+const params = new URLSearchParams(location.search);
+const branch = params.get('branch');
+let repo = params.get('repo');
+if (!repo) {
+  const m = location.hostname.match(/^(.+)\.github\.io$/i), seg = location.pathname.split('/')[1];
+  if (m && seg) repo = m[1] + '/' + seg;
+}
+const BASE = branch && repo
+  ? new URL('https://raw.githubusercontent.com/' + repo + '/' + encodeURIComponent(branch) + '/dist/preview/')
+  : new URL('../dist/preview/', location.href);
+const bust = () => '?t=' + Date.now();
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
 renderer.shadowMap.enabled = true;
@@ -104,9 +116,15 @@ function wedgeTris(w, h, d) {
   return [...quad(A, B, C, D), ...quad(D, C, Fv, E), ...quad(A, B, Fv, E), [A, D, E], [B, C, Fv]];
 }
 
+async function fetchJson(file) {
+  const r = await fetch(new URL(file, BASE) + bust(), { cache: 'no-store' });
+  if (!r.ok) throw new Error(file + ' → HTTP ' + r.status);
+  return r.json();
+}
+
 let current;
 async function load(name) {
-  const data = await fetch(new URL(name + '.json', BASE)).then(r => r.json());
+  const data = await fetchJson(name + '.json');
   if (current) scene.remove(current);
   const group = new THREE.Group();
   for (const p of data.parts) {
@@ -126,19 +144,30 @@ async function load(name) {
   camera.position.copy(c).add(V(1, 0.7, 1.4).normalize().multiplyScalar(r * 3.2));
   sun.position.copy(c).add(V(r * 2, r * 4, r * 3)); sun.target.position.copy(c);
   const cam = sun.shadow.camera; cam.left = cam.bottom = -r * 2; cam.right = cam.top = r * 2; cam.far = r * 12; cam.updateProjectionMatrix();
-  document.getElementById('info').textContent = data.parts.length + ' parts · ' + size.toArray().map(v => +v.toFixed(1)).join(' × ') + ' studs';
-  history.replaceState(null, '', '?asset=' + encodeURIComponent(name));
+  document.getElementById('info').textContent = (branch ? branch + ' · ' : '') + data.parts.length + ' parts · ' + size.toArray().map(v => +v.toFixed(1)).join(' × ') + ' studs';
+  params.set('asset', name);
+  history.replaceState(null, '', '?' + params);
+}
+
+async function init(keep) {
+  const names = await fetchJson('index.json');
+  const pick = document.getElementById('pick');
+  const prev = keep ? pick.value : params.get('asset');
+  pick.innerHTML = names.map(n => '<option>' + n + '</option>').join('');
+  if (prev && names.includes(prev)) pick.value = prev;
+  await load(pick.value);
 }
 
 try {
-  const names = await fetch(new URL('index.json', BASE)).then(r => r.json());
-  const pick = document.getElementById('pick');
-  pick.innerHTML = names.map(n => '<option>' + n + '</option>').join('');
-  const want = new URLSearchParams(location.search).get('asset');
-  if (want && names.includes(want)) pick.value = want;
-  pick.onchange = () => load(pick.value);
-  await load(pick.value);
+  if (branch && !repo) throw new Error('?branch= needs ?repo=owner/name when not served from <owner>.github.io/<repo>/');
+  document.getElementById('pick').onchange = e => load(e.target.value).catch(showErr);
+  document.getElementById('reload').onclick = () => { document.getElementById('err').textContent = ''; init(true).catch(showErr); };
+  await init(false);
 } catch (e) {
+  showErr(e);
+}
+
+function showErr(e) {
   console.error(e);
   document.getElementById('err').textContent = 'Could not load dist/preview (' + e.message + '). Run the Lune build and serve the repo root over http.';
 }

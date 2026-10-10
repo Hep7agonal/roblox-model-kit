@@ -1,14 +1,13 @@
 name: build
 on:
   push:
-    branches: [main]
   workflow_dispatch:
 permissions:
   contents: write
   pages: write
   id-token: write
 concurrency:
-  group: build
+  group: build-${{ github.ref }}
   cancel-in-progress: true
 jobs:
   build:
@@ -23,10 +22,12 @@ jobs:
           git config user.email "github-actions@users.noreply.github.com"
           git add dist
           git diff --cached --quiet || (git commit -m "build: update dist [skip ci]" && git push)
-      - uses: actions/upload-pages-artifact@v3
+      - if: github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
         with:
           path: .
   deploy:
+    if: github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     environment:

@@ -48,6 +48,16 @@ Optional runtime builder (procedural variations in-game): add
 See examples/game.default.project.json.
 
 ## Mobile
-Push to main runs .github/workflows/build.yml: it builds, commits dist/, and publishes
-the preview to GitHub Pages (enable Pages → Source: GitHub Actions). Prompt Claude Code on
-the web from your phone, check the Pages link, sync into Studio later at a desktop.
+.github/workflows/build.yml builds on every branch push and commits the rebuilt dist/ back
+to that branch. Only main publishes the preview to GitHub Pages (enable Pages → Source:
+GitHub Actions; Pages needs a public repo on the free plan).
+
+Flow: prompt Claude Code on the web from your phone. It commits and pushes to its working
+branch (never main) and replies with a preview link:
+
+    https://<you>.github.io/roblox-model-kit/preview/?branch=<branch>&asset=<Name>
+
+With `?branch=` the viewer loads dist/preview straight from that branch on GitHub (cache-
+busted), so you see each round without merging. Add `?repo=owner/name` if the viewer isn't
+served from the repo's own Pages address. The Reload button refetches. Merge to main when
+you approve, then sync into Studio later at a desktop.

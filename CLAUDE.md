@@ -14,7 +14,9 @@ When asked for "New asset: <Name>":
 5. Write assets/<Name>/build.luau using the ModelKit API below. Nothing else.
 6. Run: lune run scripts/build.luau <Name>
 7. Report: part count, overall size in studs, assumptions made.
-8. Do not commit until I approve. Then commit build.luau, refs/<Name>/ and dist/.
+8. Commit build.luau, refs/<Name>/ and dist/ and push to your working branch (never main),
+   then give me the preview link.
+9. Repeat step 8 each round of feedback. I merge to main when I approve.
 
 Follow-ups look like "<Name>: barrel 1 stud longer". Edit only what was asked.
 
