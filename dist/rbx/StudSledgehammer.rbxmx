@@ -1,0 +1,795 @@
+<roblox version="4">
+  <Item class="Model" referent="0">
+    <Properties>
+      <string name="Name">StudSledgehammer</string>
+    </Properties>
+    <Item class="Part" referent="1">
+      <Properties>
+        <string name="Name">Handle</string>
+        <bool name="Anchored">true</bool>
+        <token name="BottomSurface">0</token>
+        <CoordinateFrame name="CFrame">
+          <X>0</X>
+          <Y>10</Y>
+          <Z>0</Z>
+          <R00>1</R00>
+          <R01>0</R01>
+          <R02>0</R02>
+          <R10>0</R10>
+          <R11>1</R11>
+          <R12>0</R12>
+          <R20>0</R20>
+          <R21>0</R21>
+          <R22>1</R22>
+        </CoordinateFrame>
+        <Color3uint8 name="Color3uint8">12879406</Color3uint8>
+        <token name="Material">272</token>
+        <Vector3 name="size">
+          <X>2</X>
+          <Y>20</Y>
+          <Z>2</Z>
+        </Vector3>
+        <token name="TopSurface">0</token>
+      </Properties>
+      <Item class="Texture" referent="2">
+        <Properties>
+          <string name="Name">Studs_Top</string>
+          <token name="Face">1</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="3">
+        <Properties>
+          <string name="Name">Studs_Bottom</string>
+          <token name="Face">4</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="4">
+        <Properties>
+          <string name="Name">Studs_Front</string>
+          <token name="Face">5</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="5">
+        <Properties>
+          <string name="Name">Studs_Back</string>
+          <token name="Face">2</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="6">
+        <Properties>
+          <string name="Name">Studs_Left</string>
+          <token name="Face">3</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="7">
+        <Properties>
+          <string name="Name">Studs_Right</string>
+          <token name="Face">0</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="8">
+      <Properties>
+        <string name="Name">Head</string>
+        <bool name="Anchored">true</bool>
+        <token name="BottomSurface">0</token>
+        <CoordinateFrame name="CFrame">
+          <X>0</X>
+          <Y>16.5</Y>
+          <Z>0</Z>
+          <R00>1</R00>
+          <R01>0</R01>
+          <R02>0</R02>
+          <R10>0</R10>
+          <R11>1</R11>
+          <R12>0</R12>
+          <R20>0</R20>
+          <R21>0</R21>
+          <R22>1</R22>
+        </CoordinateFrame>
+        <Color3uint8 name="Color3uint8">6319228</Color3uint8>
+        <token name="Material">272</token>
+        <Vector3 name="size">
+          <X>10</X>
+          <Y>5</Y>
+          <Z>6</Z>
+        </Vector3>
+        <token name="TopSurface">0</token>
+      </Properties>
+      <Item class="Texture" referent="9">
+        <Properties>
+          <string name="Name">Studs_Top</string>
+          <token name="Face">1</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="10">
+        <Properties>
+          <string name="Name">Studs_Bottom</string>
+          <token name="Face">4</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="11">
+        <Properties>
+          <string name="Name">Studs_Front</string>
+          <token name="Face">5</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="12">
+        <Properties>
+          <string name="Name">Studs_Back</string>
+          <token name="Face">2</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="13">
+      <Properties>
+        <string name="Name">Face_Front</string>
+        <bool name="Anchored">true</bool>
+        <token name="BottomSurface">0</token>
+        <CoordinateFrame name="CFrame">
+          <X>5.5</X>
+          <Y>16.5</Y>
+          <Z>0</Z>
+          <R00>1</R00>
+          <R01>0</R01>
+          <R02>0</R02>
+          <R10>0</R10>
+          <R11>1</R11>
+          <R12>0</R12>
+          <R20>0</R20>
+          <R21>0</R21>
+          <R22>1</R22>
+        </CoordinateFrame>
+        <Color3uint8 name="Color3uint8">6319228</Color3uint8>
+        <token name="Material">272</token>
+        <Vector3 name="size">
+          <X>1</X>
+          <Y>3</Y>
+          <Z>4</Z>
+        </Vector3>
+        <token name="TopSurface">0</token>
+      </Properties>
+      <Item class="Texture" referent="14">
+        <Properties>
+          <string name="Name">Studs_Right</string>
+          <token name="Face">0</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="WedgePart" referent="15">
+      <Properties>
+        <string name="Name">Bevel_Front_Top</string>
+        <bool name="Anchored">true</bool>
+        <token name="BottomSurface">0</token>
+        <CoordinateFrame name="CFrame">
+          <X>5.5</X>
+          <Y>18.5</Y>
+          <Z>0</Z>
+          <R00>-0</R00>
+          <R01>0</R01>
+          <R02>-1</R02>
+          <R10>0</R10>
+          <R11>1</R11>
+          <R12>0</R12>
+          <R20>1</R20>
+          <R21>0</R21>
+          <R22>-0</R22>
+        </CoordinateFrame>
+        <Color3uint8 name="Color3uint8">6319228</Color3uint8>
+        <token name="Material">272</token>
+        <Vector3 name="size">
+          <X>4</X>
+          <Y>1</Y>
+          <Z>1</Z>
+        </Vector3>
+        <token name="TopSurface">0</token>
+      </Properties>
+      <Item class="Texture" referent="16">
+        <Properties>
+          <string name="Name">Studs_Top</string>
+          <token name="Face">1</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="17">
+        <Properties>
+          <string name="Name">Studs_Bottom</string>
+          <token name="Face">4</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="18">
+        <Properties>
+          <string name="Name">Studs_Front</string>
+          <token name="Face">5</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="19">
+        <Properties>
+          <string name="Name">Studs_Back</string>
+          <token name="Face">2</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="20">
+        <Properties>
+          <string name="Name">Studs_Left</string>
+          <token name="Face">3</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="21">
+        <Properties>
+          <string name="Name">Studs_Right</string>
+          <token name="Face">0</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="WedgePart" referent="22">
+      <Properties>
+        <string name="Name">Bevel_Front_Bottom</string>
+        <bool name="Anchored">true</bool>
+        <token name="BottomSurface">0</token>
+        <CoordinateFrame name="CFrame">
+          <X>5.5</X>
+          <Y>14.5</Y>
+          <Z>0</Z>
+          <R00>0</R00>
+          <R01>-0</R01>
+          <R02>-1</R02>
+          <R10>-0</R10>
+          <R11>-1</R11>
+          <R12>0</R12>
+          <R20>-1</R20>
+          <R21>0</R21>
+          <R22>-0</R22>
+        </CoordinateFrame>
+        <Color3uint8 name="Color3uint8">6319228</Color3uint8>
+        <token name="Material">272</token>
+        <Vector3 name="size">
+          <X>4</X>
+          <Y>1</Y>
+          <Z>1</Z>
+        </Vector3>
+        <token name="TopSurface">0</token>
+      </Properties>
+      <Item class="Texture" referent="23">
+        <Properties>
+          <string name="Name">Studs_Top</string>
+          <token name="Face">1</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="24">
+        <Properties>
+          <string name="Name">Studs_Bottom</string>
+          <token name="Face">4</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="25">
+        <Properties>
+          <string name="Name">Studs_Front</string>
+          <token name="Face">5</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="26">
+        <Properties>
+          <string name="Name">Studs_Back</string>
+          <token name="Face">2</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="27">
+        <Properties>
+          <string name="Name">Studs_Left</string>
+          <token name="Face">3</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="28">
+        <Properties>
+          <string name="Name">Studs_Right</string>
+          <token name="Face">0</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="29">
+      <Properties>
+        <string name="Name">Bevel_Front_Left</string>
+        <bool name="Anchored">true</bool>
+        <token name="BottomSurface">0</token>
+        <CoordinateFrame name="CFrame">
+          <X>5</X>
+          <Y>16.5</Y>
+          <Z>2</Z>
+          <R00>0.70710754</R00>
+          <R01>0</R01>
+          <R02>0.70710754</R02>
+          <R10>0</R10>
+          <R11>1</R11>
+          <R12>0</R12>
+          <R20>-0.70710754</R20>
+          <R21>0</R21>
+          <R22>0.70710754</R22>
+        </CoordinateFrame>
+        <Color3uint8 name="Color3uint8">6319228</Color3uint8>
+        <token name="Material">272</token>
+        <Vector3 name="size">
+          <X>1.4142151</X>
+          <Y>3</Y>
+          <Z>1.4142151</Z>
+        </Vector3>
+        <token name="TopSurface">0</token>
+      </Properties>
+      <Item class="Texture" referent="30">
+        <Properties>
+          <string name="Name">Studs_Back</string>
+          <token name="Face">2</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="31">
+      <Properties>
+        <string name="Name">Bevel_Front_Right</string>
+        <bool name="Anchored">true</bool>
+        <token name="BottomSurface">0</token>
+        <CoordinateFrame name="CFrame">
+          <X>5</X>
+          <Y>16.5</Y>
+          <Z>-2</Z>
+          <R00>0.70710754</R00>
+          <R01>0</R01>
+          <R02>0.70710754</R02>
+          <R10>0</R10>
+          <R11>1</R11>
+          <R12>0</R12>
+          <R20>-0.70710754</R20>
+          <R21>0</R21>
+          <R22>0.70710754</R22>
+        </CoordinateFrame>
+        <Color3uint8 name="Color3uint8">6319228</Color3uint8>
+        <token name="Material">272</token>
+        <Vector3 name="size">
+          <X>1.4142151</X>
+          <Y>3</Y>
+          <Z>1.4142151</Z>
+        </Vector3>
+        <token name="TopSurface">0</token>
+      </Properties>
+      <Item class="Texture" referent="32">
+        <Properties>
+          <string name="Name">Studs_Right</string>
+          <token name="Face">0</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="33">
+      <Properties>
+        <string name="Name">Face_Back</string>
+        <bool name="Anchored">true</bool>
+        <token name="BottomSurface">0</token>
+        <CoordinateFrame name="CFrame">
+          <X>-5.5</X>
+          <Y>16.5</Y>
+          <Z>0</Z>
+          <R00>1</R00>
+          <R01>0</R01>
+          <R02>0</R02>
+          <R10>0</R10>
+          <R11>1</R11>
+          <R12>0</R12>
+          <R20>0</R20>
+          <R21>0</R21>
+          <R22>1</R22>
+        </CoordinateFrame>
+        <Color3uint8 name="Color3uint8">6319228</Color3uint8>
+        <token name="Material">272</token>
+        <Vector3 name="size">
+          <X>1</X>
+          <Y>3</Y>
+          <Z>4</Z>
+        </Vector3>
+        <token name="TopSurface">0</token>
+      </Properties>
+      <Item class="Texture" referent="34">
+        <Properties>
+          <string name="Name">Studs_Left</string>
+          <token name="Face">3</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="WedgePart" referent="35">
+      <Properties>
+        <string name="Name">Bevel_Back_Top</string>
+        <bool name="Anchored">true</bool>
+        <token name="BottomSurface">0</token>
+        <CoordinateFrame name="CFrame">
+          <X>-5.5</X>
+          <Y>18.5</Y>
+          <Z>0</Z>
+          <R00>-0</R00>
+          <R01>0</R01>
+          <R02>1</R02>
+          <R10>0</R10>
+          <R11>1</R11>
+          <R12>0</R12>
+          <R20>-1</R20>
+          <R21>0</R21>
+          <R22>-0</R22>
+        </CoordinateFrame>
+        <Color3uint8 name="Color3uint8">6319228</Color3uint8>
+        <token name="Material">272</token>
+        <Vector3 name="size">
+          <X>4</X>
+          <Y>1</Y>
+          <Z>1</Z>
+        </Vector3>
+        <token name="TopSurface">0</token>
+      </Properties>
+      <Item class="Texture" referent="36">
+        <Properties>
+          <string name="Name">Studs_Top</string>
+          <token name="Face">1</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="37">
+        <Properties>
+          <string name="Name">Studs_Bottom</string>
+          <token name="Face">4</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="38">
+        <Properties>
+          <string name="Name">Studs_Front</string>
+          <token name="Face">5</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="39">
+        <Properties>
+          <string name="Name">Studs_Back</string>
+          <token name="Face">2</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="40">
+        <Properties>
+          <string name="Name">Studs_Left</string>
+          <token name="Face">3</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="41">
+        <Properties>
+          <string name="Name">Studs_Right</string>
+          <token name="Face">0</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="WedgePart" referent="42">
+      <Properties>
+        <string name="Name">Bevel_Back_Bottom</string>
+        <bool name="Anchored">true</bool>
+        <token name="BottomSurface">0</token>
+        <CoordinateFrame name="CFrame">
+          <X>-5.5</X>
+          <Y>14.5</Y>
+          <Z>0</Z>
+          <R00>0</R00>
+          <R01>-0</R01>
+          <R02>1</R02>
+          <R10>-0</R10>
+          <R11>-1</R11>
+          <R12>0</R12>
+          <R20>1</R20>
+          <R21>-0</R21>
+          <R22>-0</R22>
+        </CoordinateFrame>
+        <Color3uint8 name="Color3uint8">6319228</Color3uint8>
+        <token name="Material">272</token>
+        <Vector3 name="size">
+          <X>4</X>
+          <Y>1</Y>
+          <Z>1</Z>
+        </Vector3>
+        <token name="TopSurface">0</token>
+      </Properties>
+      <Item class="Texture" referent="43">
+        <Properties>
+          <string name="Name">Studs_Top</string>
+          <token name="Face">1</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="44">
+        <Properties>
+          <string name="Name">Studs_Bottom</string>
+          <token name="Face">4</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="45">
+        <Properties>
+          <string name="Name">Studs_Front</string>
+          <token name="Face">5</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="46">
+        <Properties>
+          <string name="Name">Studs_Back</string>
+          <token name="Face">2</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="47">
+        <Properties>
+          <string name="Name">Studs_Left</string>
+          <token name="Face">3</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+      <Item class="Texture" referent="48">
+        <Properties>
+          <string name="Name">Studs_Right</string>
+          <token name="Face">0</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="49">
+      <Properties>
+        <string name="Name">Bevel_Back_Left</string>
+        <bool name="Anchored">true</bool>
+        <token name="BottomSurface">0</token>
+        <CoordinateFrame name="CFrame">
+          <X>-5</X>
+          <Y>16.5</Y>
+          <Z>2</Z>
+          <R00>0.70710754</R00>
+          <R01>0</R01>
+          <R02>0.70710754</R02>
+          <R10>0</R10>
+          <R11>1</R11>
+          <R12>0</R12>
+          <R20>-0.70710754</R20>
+          <R21>0</R21>
+          <R22>0.70710754</R22>
+        </CoordinateFrame>
+        <Color3uint8 name="Color3uint8">6319228</Color3uint8>
+        <token name="Material">272</token>
+        <Vector3 name="size">
+          <X>1.4142151</X>
+          <Y>3</Y>
+          <Z>1.4142151</Z>
+        </Vector3>
+        <token name="TopSurface">0</token>
+      </Properties>
+      <Item class="Texture" referent="50">
+        <Properties>
+          <string name="Name">Studs_Left</string>
+          <token name="Face">3</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="51">
+      <Properties>
+        <string name="Name">Bevel_Back_Right</string>
+        <bool name="Anchored">true</bool>
+        <token name="BottomSurface">0</token>
+        <CoordinateFrame name="CFrame">
+          <X>-5</X>
+          <Y>16.5</Y>
+          <Z>-2</Z>
+          <R00>0.70710754</R00>
+          <R01>0</R01>
+          <R02>0.70710754</R02>
+          <R10>0</R10>
+          <R11>1</R11>
+          <R12>0</R12>
+          <R20>-0.70710754</R20>
+          <R21>0</R21>
+          <R22>0.70710754</R22>
+        </CoordinateFrame>
+        <Color3uint8 name="Color3uint8">6319228</Color3uint8>
+        <token name="Material">272</token>
+        <Vector3 name="size">
+          <X>1.4142151</X>
+          <Y>3</Y>
+          <Z>1.4142151</Z>
+        </Vector3>
+        <token name="TopSurface">0</token>
+      </Properties>
+      <Item class="Texture" referent="52">
+        <Properties>
+          <string name="Name">Studs_Front</string>
+          <token name="Face">5</token>
+          <float name="StudsPerTileU">1</float>
+          <float name="StudsPerTileV">1</float>
+          <Content name="TextureContent">
+            <uri>rbxassetid://97862320116447</uri>
+          </Content>
+        </Properties>
+      </Item>
+    </Item>
+  </Item>
+</roblox>

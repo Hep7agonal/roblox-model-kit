@@ -1,0 +1,322 @@
+{
+  "name": "StudSledgehammer",
+  "parts": [
+    {
+      "class": "Part",
+      "color": "#c4862e",
+      "material": "SmoothPlastic",
+      "name": "Handle",
+      "pos": [
+        0,
+        10,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        2,
+        20,
+        2
+      ],
+      "studs": [
+        "Top",
+        "Bottom",
+        "Front",
+        "Back",
+        "Left",
+        "Right"
+      ]
+    },
+    {
+      "class": "Part",
+      "color": "#606c7c",
+      "material": "SmoothPlastic",
+      "name": "Head",
+      "pos": [
+        0,
+        16.5,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        10,
+        5,
+        6
+      ],
+      "studs": [
+        "Top",
+        "Bottom",
+        "Front",
+        "Back"
+      ]
+    },
+    {
+      "class": "Part",
+      "color": "#606c7c",
+      "material": "SmoothPlastic",
+      "name": "Face_Front",
+      "pos": [
+        5.5,
+        16.5,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        1,
+        3,
+        4
+      ],
+      "studs": [
+        "Right"
+      ]
+    },
+    {
+      "class": "WedgePart",
+      "color": "#606c7c",
+      "material": "SmoothPlastic",
+      "name": "Bevel_Front_Top",
+      "pos": [
+        5.5,
+        18.5,
+        0
+      ],
+      "rot": [
+        0,
+        -1.5707963267948966,
+        0
+      ],
+      "size": [
+        4,
+        1,
+        1
+      ],
+      "studs": [
+        "Top",
+        "Bottom",
+        "Front",
+        "Back",
+        "Left",
+        "Right"
+      ]
+    },
+    {
+      "class": "WedgePart",
+      "color": "#606c7c",
+      "material": "SmoothPlastic",
+      "name": "Bevel_Front_Bottom",
+      "pos": [
+        5.5,
+        14.5,
+        0
+      ],
+      "rot": [
+        0,
+        -1.5707963267948966,
+        3.141592653589793
+      ],
+      "size": [
+        4,
+        1,
+        1
+      ],
+      "studs": [
+        "Top",
+        "Bottom",
+        "Front",
+        "Back",
+        "Left",
+        "Right"
+      ]
+    },
+    {
+      "class": "Part",
+      "color": "#606c7c",
+      "material": "SmoothPlastic",
+      "name": "Bevel_Front_Left",
+      "pos": [
+        5,
+        16.5,
+        2
+      ],
+      "rot": [
+        0,
+        0.7853981633974483,
+        0
+      ],
+      "size": [
+        1.4142135623730951,
+        3,
+        1.4142135623730951
+      ],
+      "studs": [
+        "Back"
+      ]
+    },
+    {
+      "class": "Part",
+      "color": "#606c7c",
+      "material": "SmoothPlastic",
+      "name": "Bevel_Front_Right",
+      "pos": [
+        5,
+        16.5,
+        -2
+      ],
+      "rot": [
+        0,
+        0.7853981633974483,
+        0
+      ],
+      "size": [
+        1.4142135623730951,
+        3,
+        1.4142135623730951
+      ],
+      "studs": [
+        "Right"
+      ]
+    },
+    {
+      "class": "Part",
+      "color": "#606c7c",
+      "material": "SmoothPlastic",
+      "name": "Face_Back",
+      "pos": [
+        -5.5,
+        16.5,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        1,
+        3,
+        4
+      ],
+      "studs": [
+        "Left"
+      ]
+    },
+    {
+      "class": "WedgePart",
+      "color": "#606c7c",
+      "material": "SmoothPlastic",
+      "name": "Bevel_Back_Top",
+      "pos": [
+        -5.5,
+        18.5,
+        0
+      ],
+      "rot": [
+        0,
+        1.5707963267948966,
+        0
+      ],
+      "size": [
+        4,
+        1,
+        1
+      ],
+      "studs": [
+        "Top",
+        "Bottom",
+        "Front",
+        "Back",
+        "Left",
+        "Right"
+      ]
+    },
+    {
+      "class": "WedgePart",
+      "color": "#606c7c",
+      "material": "SmoothPlastic",
+      "name": "Bevel_Back_Bottom",
+      "pos": [
+        -5.5,
+        14.5,
+        0
+      ],
+      "rot": [
+        0,
+        1.5707963267948966,
+        3.141592653589793
+      ],
+      "size": [
+        4,
+        1,
+        1
+      ],
+      "studs": [
+        "Top",
+        "Bottom",
+        "Front",
+        "Back",
+        "Left",
+        "Right"
+      ]
+    },
+    {
+      "class": "Part",
+      "color": "#606c7c",
+      "material": "SmoothPlastic",
+      "name": "Bevel_Back_Left",
+      "pos": [
+        -5,
+        16.5,
+        2
+      ],
+      "rot": [
+        0,
+        0.7853981633974483,
+        0
+      ],
+      "size": [
+        1.4142135623730951,
+        3,
+        1.4142135623730951
+      ],
+      "studs": [
+        "Left"
+      ]
+    },
+    {
+      "class": "Part",
+      "color": "#606c7c",
+      "material": "SmoothPlastic",
+      "name": "Bevel_Back_Right",
+      "pos": [
+        -5,
+        16.5,
+        -2
+      ],
+      "rot": [
+        0,
+        0.7853981633974483,
+        0
+      ],
+      "size": [
+        1.4142135623730951,
+        3,
+        1.4142135623730951
+      ],
+      "studs": [
+        "Front"
+      ]
+    }
+  ],
+  "unit": "stud"
+}
