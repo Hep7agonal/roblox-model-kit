@@ -1,0 +1,24 @@
+{
+  "name": "my-game",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "Models": {
+        "$className": "Folder",
+        "StudGlove": {
+          "$path": "kit/dist/rbx/StudGlove.rbxmx"
+        }
+      },
+      "ModelKit": {
+        "$path": "kit/src"
+      }
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "Server": {
+        "$path": "src/server"
+      }
+    }
+  }
+}

@@ -1,0 +1,526 @@
+{
+  "name": "StudGlove",
+  "parts": [
+    {
+      "class": "Part",
+      "color": "#d11a1f",
+      "material": "SmoothPlastic",
+      "name": "Cuff",
+      "pos": [
+        -5,
+        4.75,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        5.5,
+        6
+      ],
+      "studs": [
+        "Top",
+        "Bottom",
+        "Front",
+        "Back"
+      ]
+    },
+    {
+      "class": "Part",
+      "color": "#9e1217",
+      "material": "SmoothPlastic",
+      "name": "Strap",
+      "pos": [
+        -5,
+        4.75,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        2,
+        5.9,
+        6.4
+      ],
+      "studs": [
+        "Top",
+        "Bottom",
+        "Front",
+        "Back"
+      ]
+    },
+    {
+      "class": "Part",
+      "color": "#f2f0ec",
+      "material": "SmoothPlastic",
+      "name": "Strap_Label",
+      "pos": [
+        -5,
+        4.75,
+        -3.25
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        1.4,
+        1,
+        0.1
+      ],
+      "studs": {}
+    },
+    {
+      "class": "Part",
+      "color": "#141414",
+      "material": "SmoothPlastic",
+      "name": "Lining",
+      "pos": [
+        -6.55,
+        4.75,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        0.1,
+        4.5,
+        5
+      ],
+      "studs": {}
+    },
+    {
+      "class": "Part",
+      "color": "#d11a1f",
+      "material": "SmoothPlastic",
+      "name": "Wrist",
+      "pos": [
+        -2.75,
+        4.75,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        1.5,
+        5.5,
+        6
+      ],
+      "studs": [
+        "Top",
+        "Bottom",
+        "Front",
+        "Back"
+      ]
+    },
+    {
+      "class": "WedgePart",
+      "color": "#d11a1f",
+      "material": "SmoothPlastic",
+      "name": "Wrist_TopRamp",
+      "pos": [
+        -2.75,
+        8.25,
+        0
+      ],
+      "rot": [
+        0,
+        1.5707963267948966,
+        0
+      ],
+      "size": [
+        6,
+        1.5,
+        1.5
+      ],
+      "studs": [
+        "Top",
+        "Bottom",
+        "Front",
+        "Back",
+        "Left",
+        "Right"
+      ]
+    },
+    {
+      "class": "WedgePart",
+      "color": "#d11a1f",
+      "material": "SmoothPlastic",
+      "name": "Wrist_BottomRamp",
+      "pos": [
+        -2.5,
+        1.5,
+        0
+      ],
+      "rot": [
+        0,
+        1.5707963267948966,
+        3.141592653589793
+      ],
+      "size": [
+        6,
+        1,
+        1
+      ],
+      "studs": [
+        "Top",
+        "Bottom",
+        "Front",
+        "Back",
+        "Left",
+        "Right"
+      ]
+    },
+    {
+      "class": "Part",
+      "color": "#d11a1f",
+      "material": "SmoothPlastic",
+      "name": "Fist",
+      "pos": [
+        2,
+        5,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        8,
+        8,
+        7
+      ],
+      "studs": [
+        "Top",
+        "Bottom",
+        "Front",
+        "Back"
+      ]
+    },
+    {
+      "class": "Part",
+      "color": "#d11a1f",
+      "material": "SmoothPlastic",
+      "name": "Knuckle",
+      "pos": [
+        6.5,
+        5,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        1,
+        6,
+        7
+      ],
+      "studs": [
+        "Right",
+        "Front",
+        "Back"
+      ]
+    },
+    {
+      "class": "WedgePart",
+      "color": "#d11a1f",
+      "material": "SmoothPlastic",
+      "name": "Knuckle_Top",
+      "pos": [
+        6.5,
+        8.5,
+        0
+      ],
+      "rot": [
+        0,
+        -1.5707963267948966,
+        0
+      ],
+      "size": [
+        7,
+        1,
+        1
+      ],
+      "studs": [
+        "Top",
+        "Bottom",
+        "Front",
+        "Back",
+        "Left",
+        "Right"
+      ]
+    },
+    {
+      "class": "WedgePart",
+      "color": "#d11a1f",
+      "material": "SmoothPlastic",
+      "name": "Knuckle_Bottom",
+      "pos": [
+        6.5,
+        1.5,
+        0
+      ],
+      "rot": [
+        0,
+        -1.5707963267948966,
+        3.141592653589793
+      ],
+      "size": [
+        7,
+        1,
+        1
+      ],
+      "studs": [
+        "Top",
+        "Bottom",
+        "Front",
+        "Back",
+        "Left",
+        "Right"
+      ]
+    },
+    {
+      "class": "Part",
+      "color": "#d11a1f",
+      "material": "SmoothPlastic",
+      "name": "TopBulge",
+      "pos": [
+        2,
+        9.5,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        1,
+        7
+      ],
+      "studs": [
+        "Top",
+        "Front",
+        "Back"
+      ]
+    },
+    {
+      "class": "WedgePart",
+      "color": "#d11a1f",
+      "material": "SmoothPlastic",
+      "name": "TopBulge_Back",
+      "pos": [
+        -1,
+        9.5,
+        0
+      ],
+      "rot": [
+        0,
+        1.5707963267948966,
+        0
+      ],
+      "size": [
+        7,
+        1,
+        1
+      ],
+      "studs": [
+        "Top",
+        "Bottom",
+        "Front",
+        "Back",
+        "Left",
+        "Right"
+      ]
+    },
+    {
+      "class": "WedgePart",
+      "color": "#d11a1f",
+      "material": "SmoothPlastic",
+      "name": "TopBulge_Front",
+      "pos": [
+        5,
+        9.5,
+        0
+      ],
+      "rot": [
+        0,
+        -1.5707963267948966,
+        0
+      ],
+      "size": [
+        7,
+        1,
+        1
+      ],
+      "studs": [
+        "Top",
+        "Bottom",
+        "Front",
+        "Back",
+        "Left",
+        "Right"
+      ]
+    },
+    {
+      "class": "Part",
+      "color": "#d11a1f",
+      "material": "SmoothPlastic",
+      "name": "BottomBulge",
+      "pos": [
+        2,
+        0.5,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        1,
+        7
+      ],
+      "studs": [
+        "Bottom",
+        "Front",
+        "Back"
+      ]
+    },
+    {
+      "class": "WedgePart",
+      "color": "#d11a1f",
+      "material": "SmoothPlastic",
+      "name": "BottomBulge_Back",
+      "pos": [
+        -1,
+        0.5,
+        0
+      ],
+      "rot": [
+        0,
+        1.5707963267948966,
+        3.141592653589793
+      ],
+      "size": [
+        7,
+        1,
+        1
+      ],
+      "studs": [
+        "Top",
+        "Bottom",
+        "Front",
+        "Back",
+        "Left",
+        "Right"
+      ]
+    },
+    {
+      "class": "WedgePart",
+      "color": "#d11a1f",
+      "material": "SmoothPlastic",
+      "name": "BottomBulge_Front",
+      "pos": [
+        5,
+        0.5,
+        0
+      ],
+      "rot": [
+        0,
+        -1.5707963267948966,
+        3.141592653589793
+      ],
+      "size": [
+        7,
+        1,
+        1
+      ],
+      "studs": [
+        "Top",
+        "Bottom",
+        "Front",
+        "Back",
+        "Left",
+        "Right"
+      ]
+    },
+    {
+      "class": "Part",
+      "color": "#d11a1f",
+      "material": "SmoothPlastic",
+      "name": "Thumb",
+      "pos": [
+        2.5,
+        3.5,
+        4
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        4,
+        2,
+        2
+      ],
+      "studs": [
+        "Top",
+        "Bottom",
+        "Front",
+        "Back",
+        "Left",
+        "Right"
+      ]
+    },
+    {
+      "class": "Part",
+      "color": "#d11a1f",
+      "material": "SmoothPlastic",
+      "name": "Thumb_Tip",
+      "pos": [
+        4.8,
+        3.5,
+        3.6
+      ],
+      "rot": [
+        0,
+        0.7853981633974483,
+        0
+      ],
+      "size": [
+        2,
+        2,
+        2
+      ],
+      "studs": [
+        "Top",
+        "Bottom",
+        "Front",
+        "Back",
+        "Left",
+        "Right"
+      ]
+    }
+  ],
+  "unit": "stud"
+}

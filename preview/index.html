@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Model Kit Preview</title>
+<script type="importmap">
+{ "imports": {
+  "three": "https://unpkg.com/three@0.184.0/build/three.module.js",
+  "three/addons/": "https://unpkg.com/three@0.184.0/examples/jsm/"
+} }
+</script>
+<style>
+  html, body { margin: 0; height: 100%; background: #f3f1ee; font: 14px/1.4 system-ui, sans-serif; color: #1d1b19; overflow: hidden; }
+  #ui { position: fixed; top: 12px; left: 12px; display: flex; gap: 10px; align-items: center; background: #fff; padding: 8px 12px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,.12); }
+  select { font: inherit; padding: 4px 6px; }
+  #err { position: fixed; bottom: 12px; left: 12px; color: #a11; }
+</style>
+</head>
+<body>
+<div id="ui"><select id="pick"></select><span id="info"></span></div>
+<div id="err"></div>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const BASE = new URL('../dist/preview/', location.href);
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFShadowMap;
+document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xf3f1ee);
+const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 1000);
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+scene.add(new THREE.HemisphereLight(0xffffff, 0xb9b2a8, 1.6));
+const sun = new THREE.DirectionalLight(0xffffff, 2.2);
+sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048);
+scene.add(sun, sun.target);
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), new THREE.ShadowMaterial({ opacity: 0.18 }));
+ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
+
+// Grayscale stud tile (same artwork as stud.png) used as a colour-multiplied map
+const studMap = await new Promise(res => {
+  const img = new Image();
+  img.onload = () => {
+    const c = document.createElement('canvas'); c.width = c.height = 64;
+    const x = c.getContext('2d'); x.fillStyle = '#e6e6e6'; x.fillRect(0, 0, 64, 64); x.drawImage(img, 0, 0, 64, 64);
+    const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.colorSpace = THREE.SRGBColorSpace;
+    t.anisotropy = 8; res(t);
+  };
+  img.onerror = () => res(null);
+  img.src = 'stud.png';
+});
+
+// Triangles → geometry with per-face stud groups and stud-scaled planar UVs
+function buildGeometry(tris, studFaces, isWedge) {
+  const ctr = new THREE.Vector3(); let n = 0;
+  tris.flat().forEach(v => { ctr.add(v); n++; }); ctr.divideScalar(n);
+  const groups = [[], []];
+  for (let [a, b, c] of tris) {
+    let nrm = new THREE.Vector3().subVectors(b, a).cross(new THREE.Vector3().subVectors(c, a)).normalize();
+    const mid = a.clone().add(b).add(c).divideScalar(3);
+    if (nrm.dot(mid.sub(ctr)) < 0) { [b, c] = [c, b]; nrm.negate(); }
+    let face;
+    if (isWedge && nrm.y > 0.1 && nrm.z < -0.1) face = 'Front';
+    else {
+      const ax = [Math.abs(nrm.x), Math.abs(nrm.y), Math.abs(nrm.z)];
+      const i = ax.indexOf(Math.max(...ax));
+      face = i === 0 ? (nrm.x > 0 ? 'Right' : 'Left') : i === 1 ? (nrm.y > 0 ? 'Top' : 'Bottom') : (nrm.z > 0 ? 'Back' : 'Front');
+    }
+    const ax = [Math.abs(nrm.x), Math.abs(nrm.y), Math.abs(nrm.z)];
+    const d = ax.indexOf(Math.max(...ax));
+    const uv = v => d === 0 ? [v.z + 0.5, v.y + 0.5] : d === 1 ? [v.x + 0.5, v.z + 0.5] : [v.x + 0.5, v.y + 0.5];
+    groups[studFaces.includes(face) ? 1 : 0].push([a, b, c, uv]);
+  }
+  const pos = [], uvs = [], g = new THREE.BufferGeometry();
+  let start = 0;
+  groups.forEach((list, mi) => {
+    for (const [a, b, c, uv] of list) for (const v of [a, b, c]) { pos.push(v.x, v.y, v.z); uvs.push(...uv(v)); }
+    g.addGroup(start, list.length * 3, mi); start += list.length * 3;
+  });
+  g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  g.setAttribute('uv', new THREE.Float32BufferAttribute(uvs, 2));
+  g.computeVertexNormals();
+  return g;
+}
+const V = (x, y, z) => new THREE.Vector3(x, y, z);
+const quad = (a, b, c, d) => [[a, b, c], [a, c, d]];
+function boxTris(w, h, d) {
+  const x = w / 2, y = h / 2, z = d / 2, p = (i, j, k) => V(i * x, j * y, k * z);
+  return [
+    ...quad(p(1,-1,-1), p(1,1,-1), p(1,1,1), p(1,-1,1)), ...quad(p(-1,-1,-1), p(-1,-1,1), p(-1,1,1), p(-1,1,-1)),
+    ...quad(p(-1,1,-1), p(-1,1,1), p(1,1,1), p(1,1,-1)), ...quad(p(-1,-1,-1), p(1,-1,-1), p(1,-1,1), p(-1,-1,1)),
+    ...quad(p(-1,-1,1), p(1,-1,1), p(1,1,1), p(-1,1,1)), ...quad(p(-1,-1,-1), p(-1,1,-1), p(1,1,-1), p(1,-1,-1)),
+  ];
+}
+// Roblox WedgePart: full-height back face at +Z, slope descending to the front (-Z)
+function wedgeTris(w, h, d) {
+  const x = w / 2, y = h / 2, z = d / 2;
+  const A = V(-x,-y,-z), B = V(x,-y,-z), C = V(x,-y,z), D = V(-x,-y,z), E = V(-x,y,z), Fv = V(x,y,z);
+  return [...quad(A, B, C, D), ...quad(D, C, Fv, E), ...quad(A, B, Fv, E), [A, D, E], [B, C, Fv]];
+}
+
+let current;
+async function load(name) {
+  const data = await fetch(new URL(name + '.json', BASE)).then(r => r.json());
+  if (current) scene.remove(current);
+  const group = new THREE.Group();
+  for (const p of data.parts) {
+    const [w, h, d] = p.size, wedge = p.class === 'WedgePart';
+    const geo = buildGeometry(wedge ? wedgeTris(w, h, d) : boxTris(w, h, d), Array.isArray(p.studs) ? p.studs : Object.values(p.studs || {}), wedge);
+    const plain = new THREE.MeshStandardMaterial({ color: p.color, roughness: 0.5 });
+    const studded = new THREE.MeshStandardMaterial({ color: p.color, roughness: 0.5, map: studMap });
+    const m = new THREE.Mesh(geo, [plain, studded]);
+    m.name = p.name; m.position.set(...p.pos); m.rotation.set(p.rot[0], p.rot[1], p.rot[2], 'XYZ');
+    m.castShadow = m.receiveShadow = true; group.add(m);
+  }
+  scene.add(group); current = group;
+  const box = new THREE.Box3().setFromObject(group), size = box.getSize(new THREE.Vector3()), c = box.getCenter(new THREE.Vector3());
+  ground.position.y = box.min.y;
+  const r = size.length() / 2;
+  controls.target.copy(c);
+  camera.position.copy(c).add(V(1, 0.7, 1.4).normalize().multiplyScalar(r * 3.2));
+  sun.position.copy(c).add(V(r * 2, r * 4, r * 3)); sun.target.position.copy(c);
+  const cam = sun.shadow.camera; cam.left = cam.bottom = -r * 2; cam.right = cam.top = r * 2; cam.far = r * 12; cam.updateProjectionMatrix();
+  document.getElementById('info').textContent = data.parts.length + ' parts · ' + size.toArray().map(v => +v.toFixed(1)).join(' × ') + ' studs';
+  history.replaceState(null, '', '?asset=' + encodeURIComponent(name));
+}
+
+try {
+  const names = await fetch(new URL('index.json', BASE)).then(r => r.json());
+  const pick = document.getElementById('pick');
+  pick.innerHTML = names.map(n => '<option>' + n + '</option>').join('');
+  const want = new URLSearchParams(location.search).get('asset');
+  if (want && names.includes(want)) pick.value = want;
+  pick.onchange = () => load(pick.value);
+  await load(pick.value);
+} catch (e) {
+  console.error(e);
+  document.getElementById('err').textContent = 'Could not load dist/preview (' + e.message + '). Run the Lune build and serve the repo root over http.';
+}
+
+function resize() { renderer.setSize(innerWidth, innerHeight); camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); }
+addEventListener('resize', resize); resize();
+renderer.setAnimationLoop(() => { controls.update(); renderer.render(scene, camera); });
+</script>
+</body>
+</html>

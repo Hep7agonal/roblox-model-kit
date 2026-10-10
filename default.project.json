@@ -1,0 +1,15 @@
+{
+  "name": "roblox-model-kit",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "Models": {
+        "$path": "dist/rbx"
+      },
+      "ModelKit": {
+        "$path": "src"
+      }
+    }
+  }
+}
